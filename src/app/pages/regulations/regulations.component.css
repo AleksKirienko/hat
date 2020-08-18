@@ -1,0 +1,8 @@
+.card-body {
+  margin-left: 100px;
+}
+
+.rightimg {
+  float: right; /* Выравнивание по правому краю  */
+  margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
+}
