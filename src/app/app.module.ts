@@ -7,6 +7,7 @@ import { RegulationsComponent } from './pages/regulations/regulations.component'
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { GameComponent } from './pages/game/game.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     MenuComponent,
     RegulationsComponent,
     NotFoundComponent,
-    MainPageComponent
+    MainPageComponent,
+    GameComponent
   ],
   imports: [
     AppRoutingModule,
