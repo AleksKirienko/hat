@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { GameComponent } from './pages/game/game.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { GameComponent } from './pages/game/game.component';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
