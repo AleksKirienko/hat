@@ -1,18 +1,29 @@
 <h2 align="center"><p> Выбранные слова </p></h2>
-<div class="card-deck">
-  <div class="container" *ngFor="let word of words">
-    <div class="card" align="center">
-      <div class="card-body">
-        <p class="card-text"><font size="4">{{ word.word }}</font></p>
+<div align="center" class="accordion" id="accordionExample">
+  <div class="card-deck" style="width: 50rem;">
+    <div class="container" *ngFor="let word of words">
+      <div id="accordion">
+        <div class="card" align="center">
+          <div class="card-body block" id="headingThree">
+            <p class="card-text"><font size="4">{{ word.word }}</font></p>
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                      aria-expanded="false" aria-controls="collapseThree"> help
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-footer">
+              <small class="text-muted"><font size="2"><p>
+                {{word.description}}<br>
+              </p>
+              </font>
+              </small>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-footer">
-        <small class="text-muted" align="right"><font size="2"><p align="right">
-          {{word.description}}<br>
-        </p>
-        </font>
-        </small>
-      </div>
+      <br>
     </div>
-    <br>
   </div>
 </div>

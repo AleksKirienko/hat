@@ -1,6 +1,6 @@
 .block {
-  /*background: url(src/assets/img/bg_left.gif) repeat-y,*/
-  /*#ffffff url(src/assets/img/bg_right.gif) repeat-y 100% 0;*/
+  background: url(src/assets/img/bg_left.gif) repeat-y,
+  #ffffff url(src/assets/img/bg_right.gif) repeat-y 100% 0;
 
   /*background: #F0F8FF;*/
   padding: 10px;
