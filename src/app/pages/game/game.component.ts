@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GameService } from '../../core/game/game.service';
 import { GameItem } from '../../core/models/game-item';
@@ -6,9 +6,10 @@ import { GameItem } from '../../core/models/game-item';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
+  providers: [GameService]
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, OnDestroy {
 
   words: GameItem[] = [];
 
@@ -30,8 +31,9 @@ export class GameComponent implements OnInit {
   // tslint:disable-next-line:typedef
   private loadTopHeadlines() {
     // Добавляем запрос в subs, чтобы в будущем можно было отписаться от него
-    this.subs.add(this.gameService.getData().subscribe(gameItem => {
+    this.subs.add(this.gameService.getWords().subscribe(gameItem => {
       console.log(gameItem);
+      // @ts-ignore
       this.words = gameItem;
     }));
   }
