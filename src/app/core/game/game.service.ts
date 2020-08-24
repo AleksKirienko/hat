@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { GameItem } from '../models/game-item';
 import { map } from 'rxjs/operators';
 import { GameApiResponse } from '../models/GameApiResponse';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class GameService {
@@ -12,7 +13,7 @@ export class GameService {
   }
 
   getData(): Observable<GameItem[]> {
-    return this.http.get<GameApiResponse>('/game').pipe(
+    return this.http.get<GameApiResponse>(`/api/game`).pipe(
       map((words: GameApiResponse) => words.articles)
     );
   }
