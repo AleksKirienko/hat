@@ -1,19 +1,21 @@
-<h2 align="center"><p> Выбранные слова </p></h2>
-<div align="center" class="accordion" id="accordionExample">
+<h2 align="center" class="flex"><span> Выбранные слова </span></h2>
+<div class="accordion flex" id="accordionExample">
   <div class="card-deck" style="width: 50rem;">
-    <div class="container" *ngFor="let word of words">
+    <div class="container" *ngFor="let word of words | pagination: kek.currentPage">
       <div id="accordion">
         <div class="card" align="center">
           <div class="card-body block" id="headingThree">
             <p class="card-text"><font size="4">{{ word.word }}</font></p>
-            <h2 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+            <h2 class="mb-0" align="left">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree"
                       aria-expanded="false" aria-controls="collapseThree"> help
               </button>
             </h2>
           </div>
+
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-footer">
+            <div class="card-footer" align="left">
               <small class="text-muted"><font size="2"><p>
                 {{word.description}}<br>
               </p>
@@ -27,3 +29,8 @@
     </div>
   </div>
 </div>
+
+<app-pagination
+  [allItems]="words.length" #kek
+>
+</app-pagination>

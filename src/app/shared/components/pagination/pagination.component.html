@@ -1,0 +1,13 @@
+<div class="style_pagination">
+  <div>
+        <span
+          *ngFor="let el of pages"
+          [ngClass]="{'active' : active == el}"
+          (click)="handleClickPageNumber(el)">
+        </span>
+  </div>
+  <div class="button_forward">
+    <button class="purchase__button" (click)="handleClickNextArrow()" [disabled]="active === pages.length">
+      <img src="assets/img/arrow_forward_24px_rounded.svg" alt="forward"></button>
+  </div>
+</div>

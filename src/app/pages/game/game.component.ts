@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { GameService } from '../../core/game/game.service';
 import { GameItem } from '../../core/models/game-item';
@@ -18,13 +18,11 @@ export class GameComponent implements OnInit, OnDestroy {
   constructor(private gameService: GameService) {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.loadTopHeadlines();
   }
 
-  // Отписываемся от всех подписок разом, когда компонент уничтожается
-  // tslint:disable-next-line:typedef use-lifecycle-interface
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
 
