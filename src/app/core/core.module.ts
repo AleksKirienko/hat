@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GameService } from './game/game.service';
+import { GameService } from './services/game/game.service';
+import { TimerService } from './services/timer/timer.service';
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { GameService } from './game/game.service';
     CommonModule
   ],
   providers: [
-    GameService
+    GameService,
+    TimerService
   ]
 })
 export class CoreModule {

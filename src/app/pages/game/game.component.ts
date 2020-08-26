@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { GameService } from '../../core/game/game.service';
+import { GameService } from '../../core/services/game/game.service';
 import { GameItem } from '../../core/models/game-item';
 
 @Component({

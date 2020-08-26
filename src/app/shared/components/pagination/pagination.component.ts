@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class PaginationComponent {
   @Input() public allItems: number;
-  public pageSize = 100;
+  public pageSize = 30;
   public active = 0;
   public pages: number[];
 
