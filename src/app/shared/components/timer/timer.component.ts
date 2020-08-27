@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { TimerService } from '../../../core/services/timer/timer.service';
+import { timer } from 'rxjs';
+import { scan, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-timer',
@@ -9,8 +11,9 @@ import { TimerService } from '../../../core/services/timer/timer.service';
 })
 export class TimerComponent implements OnInit {
 
+  // public counter = 5;
   public countDown;
-  public counter = 10;
+  // public condition = this.counter === 3 ? alert('mfrfer') : '';
 
   constructor(private myService: TimerService) {
   }
@@ -18,5 +21,9 @@ export class TimerComponent implements OnInit {
   ngOnInit(): void {
     // this.countDown = this.myService.getCounter().do(() => --this.counter);
     this.countDown = this.myService.getCounter();
+  }
+
+  public handleTimerEnd(): void {
+    alert('JOJ');
   }
 }
